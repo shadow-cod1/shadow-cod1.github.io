@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<!-- تعريف نوع المستند بأنه HTML5 -->
+<html lang="ar" dir="rtl">
+<!-- lang="ar" لتحديد لغة الصفحة العربية
+     dir="rtl" لجعل اتجاه الصفحة من اليمين إلى اليسار -->
+
+<head>
+  <!-- تحديد ترميز الأحرف لدعم العربية بشكل صحيح -->
+  <meta charset="UTF-8" />
+
+  <!-- جعل الصفحة متجاوبة مع جميع أحجام الشاشات -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- عنوان الصفحة الذي يظهر في تبويب المتصفح -->
+  <title>SHADOW-COD1 | من أنا</title>
+
+  <!-- ربط ملف CSS الخارجي الخاص بتنسيق الصفحة -->
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+
+<!-- data-page="about" لتحديد أن الصفحة الحالية هي صفحة "من أنا"
+     ويُستخدم غالبًا لتفعيل الرابط النشط في القائمة -->
+<body data-page="about">
+
+  <!-- =========================
+       رأس الصفحة Header
+  ========================= -->
+  <header class="site-header glass">
+    <div class="container header-inner">
+
+      <!-- الشعار / اسم العلامة التجارية
+           عند الضغط عليه يعود إلى الصفحة الرئيسية -->
+      <a class="brand" href="index.html">
+        <span class="brand-mark">SC</span>
+        <div>
+          <strong>SHADOW-COD1</strong>
+          <!-- data-i18n لربط النص بنظام الترجمة -->
+          <small data-i18n="brandSubtitle">واجهة أعمال احترافية</small>
+        </div>
+      </a>
+
+      <!-- زر فتح وإغلاق القائمة في الشاشات الصغيرة -->
+      <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">☰</button>
+
+      <!-- شريط التنقل الرئيسي -->
+      <nav class="main-nav" id="mainNav">
+        <!-- data-nav يُستخدم لتحديد الصفحة المطابقة وتفعيل الرابط الحالي -->
+        <a href="index.html" data-nav="home" data-i18n="nav.home">الرئيسية</a>
+        <a href="about.html" data-nav="about" data-i18n="nav.about">من أنا</a>
+        <a href="projects.html" data-nav="projects" data-i18n="nav.projects">المشاريع</a>
+        <a href="contact.html" data-nav="contact" data-i18n="nav.contact">التواصل</a>
+      </nav>
+
+      <!-- أزرار التحكم مثل تغيير اللغة والثيم -->
+      <div class="header-actions">
+
+        <!-- زر تغيير اللغة بين العربية والإنجليزية -->
+        <button class="control-btn" id="langToggle" type="button">EN</button>
+
+        <!-- زر تغيير الثيم بين الداكن والفاتح -->
+        <button class="control-btn" id="themeToggle" type="button" aria-label="Toggle theme">🌓</button>
+      </div>
+    </div>
+  </header>
+
+  <!-- =========================
+       المحتوى الرئيسي Main
+  ========================= -->
+  <main>
+
+    <!-- قسم المقدمة الداخلية للصفحة -->
+    <section class="inner-hero">
+      <div class="container reveal">
+
+        <!-- عنوان فرعي صغير أعلى العنوان الرئيسي -->
+        <span class="eyebrow" data-i18n="about.eyebrow">نبذة مهنية</span>
+
+        <!-- العنوان الرئيسي للصفحة -->
+        <h1 data-i18n="about.title">من أنا؟</h1>
+
+        <!-- وصف مختصر عن صاحب الموقع -->
+        <p data-i18n="about.text">
+          أنا SHADOW-COD1، مطور واجهات ويب ومهتم ببناء مواقع منظمة، متجاوبة، وسهلة التصفح مع عناية كبيرة بالتفاصيل البصرية.
+        </p>
+      </div>
+    </section>
+
+    <!-- قسم معلومات "من أنا" -->
+    <section class="section">
+      <div class="container two-col">
+
+        <!-- بطاقة تعريف رئيسية -->
+        <article class="panel glass reveal">
+
+          <!-- صندوق الأحرف الأولى أو الصورة الرمزية -->
+          <div class="avatar-box">SC</div>
+
+          <!-- الاسم -->
+          <h2>SHADOW-COD1</h2>
+
+          <!-- وصف مختصر عن التخصص -->
+          <p data-i18n="about.cardText">
+            أركز على بناء صفحات واضحة، وتنظيم الملفات، وتحسين تجربة المستخدم، وتحويل الأفكار إلى واجهات عملية وحديثة.
+          </p>
+        </article>
+
+        <!-- عمود جانبي يحتوي على بطاقات إضافية -->
+        <div class="stack-col">
+
+          <!-- بطاقة توضح مجال التركيز -->
+          <article class="panel glass reveal-delay-1">
+            <h3 data-i18n="about.focusTitle">ما الذي أركز عليه؟</h3>
+            <p data-i18n="about.focusText">
+              أركز على تصميم واجهات واضحة وأنيقة وسهلة الاستخدام تُظهر الفكرة بصورة احترافية وتمنح الزائر تجربة مريحة.
+            </p>
+          </article>
+
+          <!-- بطاقة توضح الهدف الحالي -->
+          <article class="panel glass reveal-delay-2">
+            <h3 data-i18n="about.goalTitle">هدفي الحالي</h3>
+            <p data-i18n="about.goalText">
+              إنشاء معرض أعمال قوي يعرض مشاريعي بشكل جذاب ويُظهر مهاراتي التقنية والتصميمية بوضوح.
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- قسم المهارات -->
+    <section class="section compact-section">
+      <div class="container">
+
+        <!-- عنوان القسم -->
+        <div class="section-head reveal">
+          <span class="eyebrow" data-i18n="about.skillsEyebrow">المهارات</span>
+          <h2 data-i18n="about.skillsTitle">التقنيات الأساسية</h2>
+        </div>
+
+        <!-- حاوية المهارات
+             يتم تعبئتها ديناميكيًا عبر JavaScript -->
+        <div class="skills-grid" id="skillsGrid"></div>
+      </div>
+    </section>
+  </main>
+
+  <!-- =========================
+       تذييل الصفحة Footer
+  ========================= -->
+  <footer class="site-footer">
+    <div class="container footer-inner">
+
+      <!-- حقوق النشر -->
+      <p>© 2026 SHADOW-COD1</p>
+
+      <!-- روابط سريعة داخل الفوتر -->
+      <div class="footer-links">
+        <a href="projects.html" data-i18n="nav.projects">المشاريع</a>
+        <a href="contact.html" data-i18n="nav.contact">التواصل</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ربط ملف JavaScript الرئيسي المسؤول عن التفاعل والترجمة والثيم -->
+  <script src="js/main.js"></script>
+</body>
+</html>

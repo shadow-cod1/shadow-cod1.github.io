@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<!-- تعريف نوع المستند بأنه HTML5 -->
+<html lang="ar" dir="rtl">
+<!-- lang="ar" لتحديد لغة الصفحة بالعربية
+     dir="rtl" لجعل اتجاه المحتوى من اليمين إلى اليسار -->
+
+<head>
+  <!-- ترميز الأحرف لدعم اللغة العربية بشكل صحيح -->
+  <meta charset="UTF-8" />
+
+  <!-- جعل الصفحة متجاوبة مع جميع أحجام الشاشات -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- عنوان الصفحة الذي يظهر في تبويب المتصفح -->
+  <title>SHADOW-COD1 | المشاريع</title>
+
+  <!-- ربط ملف التنسيقات الرئيسي -->
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+
+<!-- data-page="projects" لتحديد أن الصفحة الحالية هي صفحة المشاريع
+     ويُستخدم غالبًا لتفعيل الرابط النشط في شريط التنقل -->
+<body data-page="projects">
+
+  <!-- =========================
+       رأس الصفحة Header
+  ========================= -->
+  <header class="site-header glass">
+    <div class="container header-inner">
+
+      <!-- الشعار / اسم الموقع
+           عند الضغط عليه يعود إلى الصفحة الرئيسية -->
+      <a class="brand" href="index.html">
+        <span class="brand-mark">SC</span>
+        <div>
+          <strong>SHADOW-COD1</strong>
+          <!-- نص فرعي مربوط بنظام الترجمة -->
+          <small data-i18n="brandSubtitle">واجهة أعمال احترافية</small>
+        </div>
+      </a>
+
+      <!-- زر فتح وإغلاق القائمة في الشاشات الصغيرة -->
+      <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">☰</button>
+
+      <!-- شريط التنقل الرئيسي -->
+      <nav class="main-nav" id="mainNav">
+        <!-- data-nav يُستخدم لتحديد الرابط النشط حسب الصفحة الحالية -->
+        <a href="index.html" data-nav="home" data-i18n="nav.home">الرئيسية</a>
+        <a href="about.html" data-nav="about" data-i18n="nav.about">من أنا</a>
+        <a href="projects.html" data-nav="projects" data-i18n="nav.projects">المشاريع</a>
+        <a href="contact.html" data-nav="contact" data-i18n="nav.contact">التواصل</a>
+      </nav>
+
+      <!-- أزرار التحكم مثل تغيير اللغة والثيم -->
+      <div class="header-actions">
+        <!-- زر تبديل اللغة بين العربية والإنجليزية -->
+        <button class="control-btn" id="langToggle" type="button">EN</button>
+
+        <!-- زر تبديل الثيم بين الداكن والفاتح -->
+        <button class="control-btn" id="themeToggle" type="button" aria-label="Toggle theme">🌓</button>
+      </div>
+    </div>
+  </header>
+
+  <!-- =========================
+       المحتوى الرئيسي Main
+  ========================= -->
+  <main>
+
+    <!-- قسم المقدمة الخاصة بصفحة المشاريع -->
+    <section class="inner-hero">
+      <div class="container reveal">
+
+        <!-- شارة تعريفية صغيرة أعلى العنوان -->
+        <span class="eyebrow" data-i18n="projects.eyebrow">معرض الأعمال</span>
+
+        <!-- العنوان الرئيسي للصفحة -->
+        <h1 data-i18n="projects.title">أعمال ومشاريع مختارة</h1>
+
+        <!-- وصف مختصر يوضح محتوى الصفحة -->
+        <p data-i18n="projects.text">
+          في هذه الصفحة ستجد نماذج من أعمالي مع وصف مختصر وروابط مباشرة للمعاينة والاطلاع على التفاصيل.
+        </p>
+      </div>
+    </section>
+
+    <!-- =========================
+         قسم أزرار الفلترة
+    ========================= -->
+    <section class="section compact-section">
+      <div class="container">
+
+        <!-- شريط الفلاتر
+             يسمح بعرض المشاريع حسب التقنية المستخدمة -->
+        <div class="filter-bar glass reveal">
+
+          <!-- زر عرض جميع المشاريع -->
+          <button class="filter-btn active" data-filter="all" data-i18n="projects.filterAll">الكل</button>
+
+          <!-- زر تصفية مشاريع HTML -->
+          <button class="filter-btn" data-filter="html">HTML</button>
+
+          <!-- زر تصفية مشاريع CSS -->
+          <button class="filter-btn" data-filter="css">CSS</button>
+
+          <!-- زر تصفية مشاريع JavaScript -->
+          <button class="filter-btn" data-filter="javascript">JavaScript</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================
+         قسم عرض المشاريع
+    ========================= -->
+    <section class="section">
+      <div class="container">
+
+        <!-- حاوية المشاريع
+             يتم تعبئتها ديناميكيًا عبر JavaScript -->
+        <div class="projects-grid" id="projectsContainer"></div>
+      </div>
+    </section>
+  </main>
+
+  <!-- =========================
+       تذييل الصفحة Footer
+  ========================= -->
+  <footer class="site-footer">
+    <div class="container footer-inner">
+
+      <!-- حقوق النشر -->
+      <p>© 2026 SHADOW-COD1</p>
+
+      <!-- روابط سريعة داخل الفوتر -->
+      <div class="footer-links">
+        <a href="projects.html" data-i18n="nav.projects">المشاريع</a>
+        <a href="contact.html" data-i18n="nav.contact">التواصل</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ربط ملف JavaScript الرئيسي المسؤول عن:
+       - الترجمة
+       - تعبئة المشاريع
+       - الفلاتر
+       - تغيير الثيم
+       - تغيير اللغة
+       - التفاعلات العامة -->
+  <script src="js/main.js"></script>
+</body>
+</html>

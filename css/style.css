@@ -1,0 +1,718 @@
+/* =========================
+   متغيرات الألوان والثيم الافتراضي الداكن
+========================= */
+:root {
+  --bg: #07111f; /* لون الخلفية الأساسي */
+  --bg-soft: #0f1b2d; /* لون خلفية ثانوي متدرج */
+  --card: rgba(15, 25, 42, 0.78); /* لون البطاقات بخلفية شفافة */
+  --text: #ecf3ff; /* لون النص الأساسي */
+  --muted: #a8b7d1; /* لون النصوص الثانوية */
+  --border: rgba(255, 255, 255, 0.08); /* لون الحدود */
+  --primary: #4da3ff; /* اللون الرئيسي */
+  --secondary: #8b5cf6; /* اللون الثانوي */
+  --shadow: 0 18px 45px rgba(0, 0, 0, 0.24); /* الظل الافتراضي للعناصر */
+}
+
+/* =========================
+   متغيرات الثيم الفاتح عند إضافة الكلاس light-theme إلى body
+========================= */
+body.light-theme {
+  --bg: #f3f7ff;
+  --bg-soft: #e7eefb;
+  --card: rgba(255, 255, 255, 0.86);
+  --text: #10203c;
+  --muted: #50627c;
+  --border: rgba(16, 32, 60, 0.1);
+  --primary: #1667c8;
+  --secondary: #6b46c1;
+  --shadow: 0 18px 45px rgba(22, 48, 92, 0.1);
+}
+
+/* إعادة ضبط القيم الافتراضية لكل العناصر */
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+/* جعل التمرير بين الأقسام سلسًا */
+html { scroll-behavior: smooth; }
+
+/* تنسيق الصفحة العامة */
+body {
+  font-family: Arial, "Segoe UI", sans-serif; /* نوع الخط */
+  background:
+    radial-gradient(circle at top right, rgba(77,163,255,.18), transparent 20%),
+    radial-gradient(circle at top left, rgba(139,92,246,.15), transparent 22%),
+    linear-gradient(135deg, var(--bg) 0%, var(--bg-soft) 100%); /* خلفية متدرجة */
+  color: var(--text); /* لون النص */
+  line-height: 1.7; /* ارتفاع السطر */
+  min-block-size: 100vh; /* أقل ارتفاع = كامل الشاشة */
+}
+
+/* الروابط بدون لون افتراضي أو خط سفلي */
+a { color: inherit; text-decoration: none; }
+
+/* الصور تكون بلوك ولا تتجاوز عرض العنصر الأب */
+img { display: block; max-inline-size: 100%; }
+
+/* الأزرار ترث الخط ويصبح شكل المؤشر يد */
+button { font: inherit; cursor: pointer; }
+
+/* حاوية عامة لتوسيط المحتوى */
+.container { inline-size: min(1180px, 92%); margin: 0 auto; }
+
+/* تأثير الزجاج الشفاف للعناصر */
+.glass {
+  background: var(--card);
+  backdrop-filter: blur(18px);
+  border: 1px solid var(--border);
+  box-shadow: var(--shadow);
+}
+
+/* =========================
+   رأس الموقع
+========================= */
+.site-header {
+  position: sticky; /* يبقى مثبتًا أعلى الصفحة أثناء التمرير */
+  inset-block-start: 0;
+  z-index: 1000; /* فوق باقي العناصر */
+  margin: 18px auto 0;
+  inline-size: min(1180px, calc(100% - 28px));
+  border-radius: 999px; /* شكل دائري طويل */
+}
+
+/* محتوى الهيدر الداخلي */
+.header-inner {
+  min-block-size: 84px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+/* تنسيق شعار الموقع */
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+/* نص صغير أسفل أو بجانب الشعار */
+.brand small {
+  color: var(--muted);
+  font-size: 0.82rem;
+}
+
+/* أيقونة أو مربع الشعار */
+.brand-mark {
+  inline-size: 46px;
+  block-size: 46px;
+  display: grid;
+  place-items: center; /* توسيط المحتوى أفقيًا وعموديًا */
+  border-radius: 14px;
+  background: linear-gradient(135deg, var(--primary), var(--secondary));
+  color: #fff;
+  font-weight: 700;
+}
+
+/* القائمة الرئيسية */
+.main-nav {
+  display: flex;
+  gap: 10px;
+}
+
+/* روابط القائمة */
+.main-nav a {
+  color: var(--muted);
+  padding: 10px 15px;
+  border-radius: 999px;
+  transition: .25s ease;
+}
+
+/* تأثير hover والرابط النشط */
+.main-nav a:hover,
+.main-nav a.active {
+  color: var(--text);
+  background: rgba(255,255,255,.07);
+}
+
+/* حاوية أزرار الهيدر */
+.header-actions {
+  display: flex;
+  gap: 10px;
+}
+
+/* تنسيق عام للأزرار الصغيرة */
+.control-btn,
+.nav-toggle,
+.slider-btn,
+.filter-btn {
+  border: 1px solid var(--border);
+  background: rgba(255,255,255,.04);
+  color: var(--text);
+  transition: .25s ease;
+}
+
+/* حجم أزرار التحكم وزر القائمة */
+.control-btn,
+.nav-toggle {
+  inline-size: 44px;
+  block-size: 44px;
+  border-radius: 14px;
+}
+
+/* تأثير التحويم للأزرار */
+.control-btn:hover,
+.nav-toggle:hover,
+.slider-btn:hover,
+.filter-btn:hover {
+  transform: translateY(-2px);
+  background: rgba(255,255,255,.08);
+}
+
+/* زر القائمة المخفية في الشاشات الكبيرة */
+.nav-toggle { display: none; }
+
+/* =========================
+   قسم البطل Hero
+========================= */
+.hero-section { padding: 88px 0 34px; }
+
+/* شبكات عامة */
+.hero-grid,
+.two-col,
+.quick-grid {
+  display: grid;
+  gap: 24px;
+}
+
+/* شبكة قسم البطل بعمودين */
+.hero-grid {
+  grid-template-columns: 1.1fr .9fr;
+  align-items: stretch;
+}
+
+/* نصوص قسم البطل */
+.hero-copy { padding: 24px 4px; }
+
+/* شارة صغيرة أعلى العنوان */
+.eyebrow,
+.mini-label {
+  display: inline-flex;
+  padding: 8px 14px;
+  border-radius: 999px;
+  color: var(--primary);
+  background: rgba(77,163,255,.11);
+  border: 1px solid rgba(77,163,255,.14);
+  margin-block-end: 18px;
+  font-size: clamp(.86rem, 1vw, .95rem); /* حجم مرن حسب الشاشة */
+}
+
+/* العناوين الرئيسية */
+.hero-copy h1,
+.inner-hero h1 {
+  font-size: clamp(2rem, 4vw, 4rem);
+  line-height: 1.18;
+  margin-block-end: 16px;
+}
+
+/* النصوص الوصفية */
+.hero-text,
+.section-head p,
+.panel p,
+.hero-panel p,
+.project-desc,
+.contact-link span {
+  color: var(--muted);
+  font-size: clamp(1rem, 1.4vw, 1.08rem);
+}
+
+/* مجموعات العناصر المرنة */
+.hero-actions,
+.hero-stats,
+.project-tech,
+.project-actions,
+.footer-links,
+.contact-list {
+  display: flex;
+  gap: 14px;
+  flex-wrap: wrap;
+}
+
+/* مسافة أزرار البطل */
+.hero-actions { margin: 28px 0 22px; }
+
+/* زر عام */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 14px 22px;
+  border-radius: 999px;
+  font-weight: 700;
+  transition: .25s ease;
+}
+
+/* تأثير التحويم للزر */
+.btn:hover { transform: translateY(-2px); }
+
+/* زر أساسي */
+.btn-primary {
+  background: linear-gradient(135deg, var(--primary), var(--secondary));
+  color: #fff;
+}
+
+/* زر ثانوي */
+.btn-secondary {
+  background: rgba(255,255,255,.06);
+  border: 1px solid var(--border);
+}
+
+/* زر بعرض كامل */
+.full-width { inline-size: 100%; }
+
+/* بطاقات الإحصائيات داخل قسم البطل */
+.hero-stats {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+}
+
+/* عناصر ذات حواف دائرية كبيرة */
+.stat-card,
+.hero-panel,
+.panel,
+.quick-card,
+.project-card {
+  border-radius: 24px;
+}
+
+/* بطاقة إحصائية */
+.stat-card {
+  padding: 18px;
+  text-align: center;
+}
+
+/* الرقم أو القيمة داخل البطاقة */
+.stat-card strong {
+  display: block;
+  font-size: clamp(1.25rem, 2vw, 1.7rem);
+  margin-block-end: 6px;
+}
+
+/* لوحة جانبية في قسم البطل */
+.hero-panel {
+  padding: 28px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+/* قائمة ميزات */
+.feature-list {
+  padding-inline-start: 18px;
+  margin-block-start: 14px;
+}
+
+.feature-list li {
+  color: var(--muted);
+  margin-block-end: 10px;
+}
+
+/* =========================
+   الأقسام العامة
+========================= */
+.section,
+.inner-hero {
+  padding: 48px 0;
+}
+
+/* قسم مدمج بمسافة علوية أقل */
+.compact-section { padding-block-start: 8px; }
+
+/* عنوان القسم */
+.section-head {
+  text-align: center;
+  margin-block-end: 28px;
+}
+
+.section-head h2 {
+  font-size: clamp(1.6rem, 3vw, 2.8rem);
+  margin-block-end: 10px;
+}
+
+/* =========================
+   السلايدر
+========================= */
+.slider-box {
+  position: relative;
+  overflow: hidden; /* إخفاء الأجزاء الخارجة */
+  padding: 24px 24px 52px;
+  border-radius: 26px;
+}
+
+.slider-track {
+  display: flex;
+  transition: transform .5s ease; /* حركة التنقل بين الشرائح */
+}
+
+.slide {
+  min-inline-size: 100%; /* كل شريحة بعرض كامل */
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+  align-items: center;
+}
+
+/* حاوية صورة الشريحة */
+.slide-media {
+  border-radius: 24px;
+  overflow: hidden;
+  border: 1px solid var(--border);
+}
+
+/* عنوان الشريحة */
+.slide-content h3 {
+  font-size: clamp(1.5rem, 2.2vw, 2.2rem);
+  margin-block-end: 14px;
+}
+
+/* وصف الشريحة */
+.slide-content p {
+  color: var(--muted);
+  margin-block-end: 16px;
+}
+
+/* شارات تقنية أو وسم */
+.badge,
+.tech-badge {
+  display: inline-flex;
+  align-items: center;
+  padding: 7px 12px;
+  border-radius: 999px;
+  background: rgba(77,163,255,.11);
+  color: var(--primary);
+  border: 1px solid rgba(77,163,255,.14);
+  font-size: .86rem;
+}
+
+/* أزرار التنقل داخل السلايدر */
+.slider-btn {
+  position: absolute;
+  inset-block-start: 50%;
+  transform: translateY(-50%);
+  inline-size: 48px;
+  block-size: 48px;
+  border-radius: 14px;
+  z-index: 2;
+}
+
+/* زر السابق */
+.slider-btn.prev { inset-inline-start: 16px; }
+
+/* زر التالي */
+.slider-btn.next { inset-inline-end: 16px; }
+
+/* نقاط التنقل أسفل السلايدر */
+.slider-dots {
+  position: absolute;
+  inset-block-end: 16px;
+  inset-inline: 0;
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+}
+
+/* شكل كل نقطة */
+.slider-dots button {
+  inline-size: 10px;
+  block-size: 10px;
+  border: 0;
+  border-radius: 50%;
+  background: rgba(255,255,255,.24);
+}
+
+/* النقطة النشطة */
+.slider-dots button.active { background: var(--primary); }
+
+/* =========================
+   بطاقات سريعة / تعريفية
+========================= */
+.quick-grid { grid-template-columns: repeat(3, 1fr); }
+
+.quick-card,
+.panel {
+  padding: 24px;
+}
+
+/* أيقونة البطاقة */
+.card-icon {
+  font-size: 1.9rem;
+  display: inline-block;
+  margin-block-end: 12px;
+}
+
+/* تخطيط عمودين */
+.two-col { grid-template-columns: .95fr 1.05fr; }
+
+/* عناصر متكدسة رأسيًا */
+.stack-col {
+  display: grid;
+  gap: 18px;
+}
+
+/* صندوق الصورة الرمزية */
+.avatar-box {
+  inline-size: 88px;
+  block-size: 88px;
+  display: grid;
+  place-items: center;
+  border-radius: 22px;
+  background: linear-gradient(135deg, var(--primary), var(--secondary));
+  color: #fff;
+  font-size: 1.8rem;
+  font-weight: 700;
+  margin-block-end: 18px;
+}
+
+/* =========================
+   المهارات والمشاريع
+========================= */
+.skills-grid,
+.projects-grid {
+  display: grid;
+  gap: 18px;
+}
+
+/* شبكة المهارات */
+.skills-grid {
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+}
+
+/* بطاقة مهارة */
+.skill-card {
+  padding: 22px;
+  border-radius: 22px;
+}
+
+/* أيقونة المهارة */
+.skill-icon {
+  font-size: 1.8rem;
+  margin-block-end: 12px;
+  display: inline-block;
+}
+
+/* شريط مستوى المهارة */
+.skill-level {
+  block-size: 10px;
+  background: rgba(255,255,255,.08);
+  border-radius: 999px;
+  overflow: hidden;
+  margin-block-start: 14px;
+}
+
+/* الجزء الممتلئ من شريط المهارة */
+.skill-level span {
+  display: block;
+  block-size: 100%;
+  background: linear-gradient(135deg, var(--primary), var(--secondary));
+}
+
+/* شريط الفلاتر */
+.filter-bar {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  flex-wrap: wrap;
+  padding: 14px;
+  border-radius: 24px;
+}
+
+/* أزرار الفلاتر */
+.filter-btn {
+  padding: 11px 16px;
+  border-radius: 999px;
+}
+
+/* الزر النشط في الفلاتر */
+.filter-btn.active {
+  background: linear-gradient(135deg, var(--primary), var(--secondary));
+  color: #fff;
+}
+
+/* شبكة المشاريع */
+.projects-grid {
+  grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
+}
+
+/* بطاقة مشروع */
+.project-card {
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+/* صورة المشروع */
+.project-media {
+  aspect-ratio: 16/10; /* نسبة العرض إلى الارتفاع */
+  overflow: hidden;
+  border-block-end: 1px solid var(--border);
+}
+
+/* الصورة داخل المشروع */
+.project-media img {
+  inline-size: 100%;
+  block-size: 100%;
+  object-fit: cover; /* ملء المساحة مع الحفاظ على النسبة */
+}
+
+/* جسم البطاقة */
+.project-body {
+  padding: 22px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  block-size: 100%;
+}
+
+/* عنوان المشروع */
+.project-body h3 {
+  font-size: clamp(1.25rem, 1.7vw, 1.45rem);
+}
+
+/* تقنيات المشروع */
+.project-tech { gap: 8px; }
+
+/* الأزرار أسفل البطاقة */
+.project-actions { margin-block-start: auto; }
+
+/* روابط المشروع */
+.project-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 11px 14px;
+  border-radius: 12px;
+  font-weight: 700;
+}
+
+/* زر العرض المباشر */
+.project-link.live {
+  background: linear-gradient(135deg, var(--primary), var(--secondary));
+  color: #fff;
+}
+
+/* زر الكود */
+.project-link.code { background: rgba(255,255,255,.06); }
+
+/* =========================
+   قسم التواصل
+========================= */
+.contact-list {
+  display: grid;
+  gap: 14px;
+  margin-block-start: 18px;
+}
+
+/* رابط تواصل */
+.contact-link {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px 18px;
+  border-radius: 18px;
+  border: 1px solid var(--border);
+  background: rgba(255,255,255,.04);
+}
+
+/* =========================
+   التذييل Footer
+========================= */
+.footer-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 18px 0 34px;
+}
+
+/* =========================
+   تأثيرات الظهور عند التمرير
+========================= */
+.reveal,
+.reveal-delay-1,
+.reveal-delay-2,
+.reveal-delay-3 {
+  opacity: 0;
+  transform: translateY(22px);
+  transition: .7s ease;
+}
+
+/* تأخير تدريجي للظهور */
+.reveal-delay-1 { transition-delay: .1s; }
+.reveal-delay-2 { transition-delay: .18s; }
+.reveal-delay-3 { transition-delay: .26s; }
+
+/* عند إضافة هذا الكلاس يصبح العنصر ظاهرًا */
+.reveal-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* =========================
+   الاستجابة للشاشات المتوسطة
+========================= */
+@media (max-width: 980px) {
+  /* تحويل أغلب التخطيطات إلى عمود واحد */
+  .hero-grid,
+  .two-col,
+  .slide,
+  .quick-grid {
+    grid-template-columns: 1fr;
+  }
+
+  /* الإحصائيات تصبح عمودًا واحدًا */
+  .hero-stats { grid-template-columns: 1fr; }
+}
+
+/* =========================
+   الاستجابة للشاشات الصغيرة
+========================= */
+@media (max-width: 820px) {
+  /* إظهار زر القائمة */
+  .nav-toggle {
+    display: inline-grid;
+    place-items: center;
+  }
+
+  /* القائمة تصبح منسدلة ومخفية افتراضيًا */
+  .main-nav {
+    position: absolute;
+    inset-block-start: calc(100% + 10px);
+    inset-inline: 0;
+    margin: 0 auto;
+    inline-size: min(100%, 92vw);
+    padding: 14px;
+    border-radius: 24px;
+    background: var(--card);
+    backdrop-filter: blur(18px);
+    border: 1px solid var(--border);
+    box-shadow: var(--shadow);
+    flex-direction: column;
+    display: none;
+  }
+
+  /* عند فتح القائمة */
+  .main-nav.open { display: flex; }
+
+  /* ترتيب الهيدر في الشاشات الصغيرة */
+  .header-inner {
+    flex-wrap: wrap;
+    padding: 16px 0;
+  }
+
+  /* تصغير أزرار السلايدر */
+  .slider-btn {
+    inline-size: 42px;
+    block-size: 42px;
+  }
+
+  /* جعل الفوتر عمودي */
+  .footer-inner { flex-direction: column; }
+}

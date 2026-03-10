@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<!-- تعريف نوع المستند: HTML5 -->
+<html lang="ar" dir="rtl">
+<!-- lang="ar" لتحديد اللغة العربية
+     dir="rtl" لجعل اتجاه المحتوى من اليمين إلى اليسار -->
+
+<head>
+  <!-- ترميز الأحرف لدعم العربية بشكل صحيح -->
+  <meta charset="UTF-8" />
+
+  <!-- جعل الصفحة متجاوبة مع جميع أحجام الشاشات -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- عنوان الصفحة في تبويب المتصفح -->
+  <title>SHADOW-COD1 | الرئيسية</title>
+
+  <!-- ربط ملف التنسيقات الرئيسي -->
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+
+<!-- data-page="home" لتحديد أن الصفحة الحالية هي الصفحة الرئيسية
+     ويُستخدم غالبًا لتفعيل الرابط النشط في القائمة -->
+<body data-page="home">
+
+  <!-- =========================
+       رأس الصفحة Header
+  ========================= -->
+  <header class="site-header glass">
+    <div class="container header-inner">
+
+      <!-- الشعار / اسم الموقع
+           عند الضغط عليه يعود إلى الصفحة الرئيسية -->
+      <a class="brand" href="index.html">
+        <span class="brand-mark">SC</span>
+        <div>
+          <strong>SHADOW-COD1</strong>
+
+          <!-- نص فرعي مربوط بنظام الترجمة -->
+          <small data-i18n="brandSubtitle">واجهة أعمال احترافية</small>
+        </div>
+      </a>
+
+      <!-- زر فتح وإغلاق القائمة في الشاشات الصغيرة -->
+      <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">☰</button>
+
+      <!-- شريط التنقل الرئيسي -->
+      <nav class="main-nav" id="mainNav">
+        <!-- data-nav تُستخدم لمطابقة الصفحة الحالية -->
+        <a href="index.html" data-nav="home" data-i18n="nav.home">الرئيسية</a>
+        <a href="about.html" data-nav="about" data-i18n="nav.about">من أنا</a>
+        <a href="projects.html" data-nav="projects" data-i18n="nav.projects">المشاريع</a>
+        <a href="contact.html" data-nav="contact" data-i18n="nav.contact">التواصل</a>
+      </nav>
+
+      <!-- أزرار التحكم: تبديل اللغة والثيم -->
+      <div class="header-actions">
+        <!-- زر تغيير اللغة -->
+        <button class="control-btn" id="langToggle" type="button">EN</button>
+
+        <!-- زر تغيير الثيم بين الداكن والفاتح -->
+        <button class="control-btn" id="themeToggle" type="button" aria-label="Toggle theme">🌓</button>
+      </div>
+    </div>
+  </header>
+
+  <!-- =========================
+       المحتوى الرئيسي Main
+  ========================= -->
+  <main>
+
+    <!-- قسم المقدمة الرئيسية Hero -->
+    <section class="hero-section">
+      <div class="container hero-grid">
+
+        <!-- العمود الأول: النصوص الرئيسية والأزرار والإحصائيات -->
+        <div class="hero-copy reveal">
+
+          <!-- شارة تعريفية أعلى العنوان -->
+          <span class="eyebrow" data-i18n="home.eyebrow">مطور واجهات ومواقع ويب</span>
+
+          <!-- العنوان الرئيسي -->
+          <h1 data-i18n="home.title">
+            أصمم مواقع حديثة، مرتبة، وسهلة التصفح مع هوية بصرية واضحة.
+          </h1>
+
+          <!-- وصف مختصر -->
+          <p class="hero-text" data-i18n="home.text">
+            أستعرض في هذا الموقع مجموعة من أعمالي المختارة مع نبذة مختصرة عن أسلوبي في التصميم والتطوير وطريقة التواصل معي.
+          </p>
+
+          <!-- أزرار الإجراءات الرئيسية -->
+          <div class="hero-actions">
+            <a href="projects.html" class="btn btn-primary" data-i18n="home.btnProjects">استعراض المشاريع</a>
+            <a href="contact.html" class="btn btn-secondary" data-i18n="home.btnContact">التواصل معي</a>
+          </div>
+
+          <!-- بطاقات إحصائية / تعريفية -->
+          <div class="hero-stats">
+
+            <!-- بطاقة إحصائية أولى -->
+            <article class="stat-card glass reveal-delay-1">
+              <strong>01</strong>
+              <span data-i18n="home.stat1">مشروع منشور</span>
+            </article>
+
+            <!-- بطاقة إحصائية ثانية -->
+            <article class="stat-card glass reveal-delay-2">
+              <strong>HTML</strong>
+              <span data-i18n="home.stat2">بنية واضحة</span>
+            </article>
+
+            <!-- بطاقة إحصائية ثالثة -->
+            <article class="stat-card glass reveal-delay-3">
+              <strong>UI</strong>
+              <span data-i18n="home.stat3">تصميم متجاوب</span>
+            </article>
+          </div>
+        </div>
+
+        <!-- العمود الثاني: بطاقة جانبية تعريفية -->
+        <div class="hero-panel glass reveal">
+
+          <!-- عنوان صغير داخل البطاقة -->
+          <span class="mini-label" data-i18n="home.panelLabel">نبذة سريعة</span>
+
+          <!-- عنوان البطاقة -->
+          <h2 data-i18n="home.panelTitle">واجهة احترافية تعكس أعمالي وخبرتي</h2>
+
+          <!-- وصف البطاقة -->
+          <p data-i18n="home.panelText">
+            تعرض هذه الواجهة أهم أعمالي بشكل منظم، مع صفحات واضحة ومحتوى يساعد الزائر على التعرف على خبرتي وأسلوب عملي بسرعة.
+          </p>
+
+          <!-- قائمة الميزات -->
+          <ul class="feature-list">
+            <li data-i18n="home.feature1">عرض منظم للمشاريع والإنجازات</li>
+            <li data-i18n="home.feature2">تنقل واضح بين الصفحات الرئيسية</li>
+            <li data-i18n="home.feature3">واجهة مناسبة للجوال والكمبيوتر</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================
+         قسم السلايدر الخاص بالمشروع المميز
+    ========================= -->
+    <section class="section">
+      <div class="container">
+
+        <!-- عنوان القسم -->
+        <div class="section-head reveal">
+          <span class="eyebrow" data-i18n="home.sliderEyebrow">مشروع مميز</span>
+          <h2 data-i18n="home.sliderTitle">لمحة على أحد الأعمال المميزة</h2>
+
+          <!-- نص وصفي للقسم -->
+          <p data-i18n="home.sliderText"></p>
+        </div>
+
+        <!-- صندوق السلايدر -->
+        <div class="slider-box glass reveal">
+
+          <!-- زر الشريحة السابقة -->
+          <button class="slider-btn prev" id="sliderPrev" aria-label="Previous">❮</button>
+
+          <!-- المسار الذي سيتم حقن الشرائح داخله عبر JavaScript -->
+          <div class="slider-track" id="featuredSlider"></div>
+
+          <!-- زر الشريحة التالية -->
+          <button class="slider-btn next" id="sliderNext" aria-label="Next">❯</button>
+
+          <!-- نقاط التنقل بين الشرائح -->
+          <div class="slider-dots" id="sliderDots"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================
+         قسم البطاقات السريعة / المميزات
+    ========================= -->
+    <section class="section compact-section">
+      <div class="container quick-grid">
+
+        <!-- بطاقة ميزة أولى -->
+        <article class="quick-card glass reveal">
+          <span class="card-icon">⚡</span>
+          <h3 data-i18n="home.quick1Title">سريع وخفيف</h3>
+          <p data-i18n="home.quick1Text">
+            تنقل سلس ومحتوى مباشر يساعد الزائر على الوصول إلى ما يبحث عنه بسهولة.
+          </p>
+        </article>
+
+        <!-- بطاقة ميزة ثانية -->
+        <article class="quick-card glass reveal-delay-1">
+          <span class="card-icon">🎨</span>
+          <h3 data-i18n="home.quick2Title">احترافي بصريًا</h3>
+          <p data-i18n="home.quick2Text">
+            ألوان متوازنة، بطاقات أنيقة، وأحجام نصوص أوضح.
+          </p>
+        </article>
+
+        <!-- بطاقة ميزة ثالثة -->
+        <article class="quick-card glass reveal-delay-2">
+          <span class="card-icon">🌍</span>
+          <h3 data-i18n="home.quick3Title">تجربة بلغتين</h3>
+          <p data-i18n="home.quick3Text">
+            يمكنك تصفح المحتوى بالعربية أو الإنجليزية بسهولة حسب ما تفضله.
+          </p>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <!-- =========================
+       تذييل الصفحة Footer
+  ========================= -->
+  <footer class="site-footer">
+    <div class="container footer-inner">
+
+      <!-- حقوق النشر -->
+      <p>© 2026 SHADOW-COD1</p>
+
+      <!-- روابط سريعة في التذييل -->
+      <div class="footer-links">
+        <a href="projects.html" data-i18n="nav.projects">المشاريع</a>
+        <a href="contact.html" data-i18n="nav.contact">التواصل</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ربط ملف JavaScript الرئيسي المسؤول عن:
+       - الترجمة
+       - السلايدر
+       - تغيير الثيم
+       - تغيير اللغة
+       - التفاعلات العامة -->
+  <script src="js/main.js"></script>
+</body>
+</html>
